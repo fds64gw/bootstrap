@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Bootstrap sample</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all" />
+    <link rel="stylesheet" href="style.css" media="all" />
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        jQuery(function($) {
+            $('#front_salon_tab a').click(function (e) {
+                e.preventDefault();
+                $(this).tab('show');
+            });
+            $('#fornt_style_pills a').click(function (e) {
+                e.preventDefault();
+                $(this).tab('show');
+            });
+            $('.style-modal').click(function(e) {
+                e.preventDefault();
+                var url_image = $(this).attr( 'href' );
+                $( '#modal_graphic').attr( 'src', url_image );
+                $('#myModal').modal('show');
+            });
+        })
+    </script>
+</head>
+<body>
+<div class="container">
+    <div id="header" class="clearfix">
+        <h1>Bootstrap sample</h1>
+    </div><!-- header -->
+</div><!-- container -->
+<div class="container">
+    <!-- tab -->
+    <div id="tabs">
+        <h2>Tab on the left</h2>
+        <div class="tabbable tabs-left">
+            <ul id="mytab" class="nav nav-tabs">
+                <li class="active"><a href="#mytab_item1" data-toggle="tab">tab1</a></li>
+                <li><a href="#mytab_item2" data-toggle="tab">tab2</a></li>
+                <li><a href="#mytab_item3" data-toggle="tab">tab3</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="mytab_item1" class="tab-pane active">
+                    <p>Tab1...</p>
+                </div><!-- tab-pane -->
+                <div id="mytab_item2" class="tab-pane">
+                    <p>Tab2...</p>
+                </div><!-- tab-pane -->
+                <div id="mytab_item3" class="tab-pane">
+                    <p>Tab3...</p>
+                </div><!-- tab-pane -->
+            </div><!-- tab-content -->
+        </div><!-- front_salon_tab -->
+    </div><!-- tabs -->
+
+    <!-- pill tab -->
+    <div id="pills">
+        <h2>Pills</h2>
+        <ul id="mypill" class="nav nav-pills">
+            <li class="active"><a href="#pill_item1">pill1</a></li>
+            <li><a href="#pill_item2">pill2</a></li>
+            <li><a href="#pill_item3">pill3</a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="pill_item1" class="tab-pane active">
+                <p>Pill1 ...</p>
+            </div><!-- pill_item1 -->
+            <div id="pill_item2" class="tab-pane active">
+                <p>Pill2 ...</p>
+            </div><!-- pill_item2 -->
+            <div id="pill_item3" class="tab-pane active">
+                <p>Pill3 ...</p>
+            </div><!-- pill_item3 -->
+        </div><!-- tab-content -->
+    </div><!-- pills -->
+
+    <!-- Modal -->
+    <div id="myModal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div>
+        <div class="modal-body">
+            <p><img id="modal_graphic" src="defalt.jpg" width="280"></p>
+        </div>
+    </div>
+</div><!-- container -->
+</body>
+</html>
